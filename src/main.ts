@@ -83,7 +83,10 @@ export default class MyPlugin extends Plugin {
 	}
 
 	async loadSettings() {
-		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+		this.settings = Object.assign(
+      {},
+      DEFAULT_SETTINGS,
+      await this.loadData());
 	}
 
 	async saveSettings() {
@@ -108,27 +111,28 @@ class SampleModal extends Modal {
 }
 
 class SampleSettingTab extends PluginSettingTab {
-	plugin: MyPlugin;
+  plugin: MyPlugin;
 
-	constructor(app: App, plugin: MyPlugin) {
-		super(app, plugin);
-		this.plugin = plugin;
-	}
+  constructor(app: App, plugin: MyPlugin) {
+    super(app, plugin);
+    this.plugin = plugin;
+  }
 
-	display(): void {
-		const {containerEl} = this;
+  display(): void {
+    const settingsContainer = this.containerEl;
+    settingsContainer.empty();
 
-		containerEl.empty();
-
-		new Setting(containerEl)
-			.setName('Setting #1')
-			.setDesc('It\'s a secret')
-			.addText(text => text
-				.setPlaceholder('Enter your secret')
-				.setValue(this.plugin.settings.mySetting)
-				.onChange(async (value) => {
-					this.plugin.settings.mySetting = value;
-					await this.plugin.saveSettings();
-				}));
-	}
+    const setting = new Setting(settingsContainer);
+    setting.setName('Setting #1');
+    setting.setDesc('It\'s a secret');
+    setting.addText((text) => {
+      text.setPlaceholder('Enter your secret');
+      text.setValue(this.plugin.settings.mySetting);
+      
+      text.onChange(async (value) => {
+        this.plugin.settings.mySetting = value;
+        await this.plugin.saveSettings();
+      })
+    });
+  }
 }
