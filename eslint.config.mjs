@@ -13,7 +13,7 @@ import importPlugin from "eslint-plugin-import";
 export default defineConfig([
   js.configs.recommended,
   tseslint.configs.recommended,
-  obsidianmd.
+  ...obsidianmd.configs.recommended,
 
   globalIgnores([
     "**/node_modules/",
