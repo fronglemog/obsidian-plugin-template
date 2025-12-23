@@ -8,23 +8,21 @@ import js from "@eslint/js";
 /* PLUGINS */
 import tseslint from "typescript-eslint";
 import obsidianmd from 'eslint-plugin-obsidianmd';
-import importPlugin from "eslint-plugin-import";
 
 export default defineConfig([
-  js.configs.recommended,
-  tseslint.configs.recommended,
-  ...obsidianmd.configs.recommended,
-
   globalIgnores([
     "**/node_modules/",
     "eslint.config.mjs",
     "**/main.js"
   ]),
 
+  js.configs.recommended,
+  tseslint.configs.recommended,
+  ...obsidianmd.configs.recommended,
+
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
     plugins: {
-      importPlugin,
       js,
       '@typescript-eslint' : tseslint.plugin
     },
@@ -40,6 +38,10 @@ export default defineConfig([
       },
       ecmaVersion: "latest",
       sourceType: "module",
+      parser: tseslint.parser,
+      parserOptions : {
+        projectService: true
+      }
     },
 
     rules: {
@@ -47,12 +49,15 @@ export default defineConfig([
       "no-undef" : "warn",
       "no-unused-vars": "off",
       "no-var" : "error",
-      "no-prototype-builtins": "off",
+      "no-prototype-builtins" : "off",
 
       // TypeScript ESLint
-      "@typescript-eslint/no-unused-vars": "warn",
-      "@typescript-eslint/no-empty-function": "off",
-      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/no-unused-vars" : "warn",
+      "@typescript-eslint/no-empty-function" : "off",
+      "@typescript-eslint/ban-ts-comment" : "off",
+
+      // Obsidianmd
+      "obsidianmd/validate-manifest" : "off"
     },
   },
 ]);
