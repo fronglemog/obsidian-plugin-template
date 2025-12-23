@@ -23,7 +23,7 @@ export default defineConfig([
     plugins: {
       importPlugin,
       js,
-      tseslint
+      '@typescript-eslint' : tseslint
     },
     extends: [
       "js/recommended",
