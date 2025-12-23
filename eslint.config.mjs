@@ -13,6 +13,7 @@ export default defineConfig([
   globalIgnores([
     "**/node_modules/",
     "eslint.config.mjs",
+    "esbuild.config.mjs",
     "**/main.js"
   ]),
 
