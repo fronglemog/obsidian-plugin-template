@@ -1,9 +1,9 @@
 // eslint.config.mjs
 
 /* ESLINT */
-import globals from "globals";
 import { defineConfig, globalIgnores } from "eslint/config";
 import js from "@eslint/js";
+import globals from "globals";
 
 /* PLUGINS */
 import tseslint from "typescript-eslint";
@@ -34,6 +34,7 @@ export default defineConfig([
     ],
     languageOptions: {
       globals: {
+        createEl,
         ...globals.node,
         ...globals.browser
       },
@@ -56,6 +57,11 @@ export default defineConfig([
       "@typescript-eslint/no-unused-vars" : "warn",
       "@typescript-eslint/no-empty-function" : "off",
       "@typescript-eslint/ban-ts-comment" : "off",
+      "@typescript-eslint/no-unsafe-assignment" : "off",
+      "@typescript-eslint/no-explicit-any" : "off",
+      "@typescript-eslint/no-empty-object-type" : "warn",
+      "@typescript-eslint/no-redundant-type-constituents" : "off",
+      "@typescript-eslint/no-misused-promises" : "off",
 
       // Obsidianmd
       "obsidianmd/validate-manifest" : "off"

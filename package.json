@@ -22,22 +22,24 @@
 		"@codemirror/lint": "6.9.0",
 		"@codemirror/search": "6.5.11",
 		"@codemirror/state": "6.5.0",
-		"@codemirror/text": "0.19.6",
 		"@codemirror/view": "6.38.1",
-		"@types/codemirror": "5.60.17",
 		"@types/node": "22.13.14",
+    "@types/eslint": "9.6.1",
+		"@types/codemirror": "5.60.17",
+    "@types/luxon" : "3.7.1",
 		"esbuild": "0.25.5",
 		"eslint": "9.38.0",
 		"@eslint/js": "9.38.0",
 		"eslint-plugin-import-x": "4.16.1",
 		"eslint-plugin-obsidianmd": "0.1.9",
+    "stylelint" : "16.26.1",
+    "stylelint-config-standard": "39.0.1",
+		"typescript": "5.9.3",
 		"tslib": "2.8.1",
-		"typescript": "5.9.2",
-		"typescript-eslint": "8.49.0",
+		"typescript-eslint": "8.51.0",
 		"globals": "16.5.0",
-		"obsidian": "latest"
-	},
-	"dependencies": {
-		"obsidian": "latest"
+		"obsidian": "latest",
+		"obsidian-typings": "4.88.0",
+    "luxon" : "3.7.2"
 	}
 }
