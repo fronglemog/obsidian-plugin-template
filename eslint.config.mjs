@@ -22,7 +22,6 @@ export default defineConfig([
     'version-bump.mjs'
   ]),
 
-  // @ts-expect-error
   ...eslintPluginObsidianmd.configs.recommended,
 
   {
