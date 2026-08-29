@@ -31,9 +31,13 @@
     }
   },
   "include": [
+    "esbuild.config.mjs",
+    "eslint.config.mjs",
     "vitest.config.ts",
     "tests/**/*.ts",
     "src/**/*.ts",
-    "src/**/*.svelte"
+    "src/**/*.svelte",
+    "src/**/*.svelte.js",
+    "src/**/*.svelte.ts"
   ]
 }
