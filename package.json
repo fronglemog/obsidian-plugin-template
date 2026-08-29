@@ -4,7 +4,6 @@
   "author": "fronglemog",
   "license": "MIT",
 	"type": "module",
-  "packageManager": "pnpm@11.3.0",
 	"main": "plugin/main.js",
 	"scripts": {
 		"preinstall": "npx only-allow pnpm",
