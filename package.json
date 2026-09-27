@@ -5,6 +5,11 @@
   "license": "MIT",
 	"type": "module",
 	"main": "plugin/main.js",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm"
+    }
+  },
 	"scripts": {
 		"preinstall": "npx only-allow pnpm",
 		"dev": "node esbuild.config.mjs",

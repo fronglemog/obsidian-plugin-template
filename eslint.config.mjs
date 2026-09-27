@@ -14,9 +14,8 @@ import eslintPluginObsidianmd from 'eslint-plugin-obsidianmd';
 export default defineConfig([
   globalIgnores([
     '**/node_modules/',
-    '**/build/',
+    '**/build/**',
     '_local/**',
-    'plugin/**',
     // 'eslint.config.mjs',
     // 'esbuild.config.mjs',
     // 'version-bump.mjs'
@@ -101,11 +100,12 @@ export default defineConfig([
       'unicorn/prefer-object-from-entries': 'warn',
 
       // eslint-plugin-obsidianmd
-      'obsidianmd/no-static-styles-assignment' : 'warn',
-      'obsidianmd/ui/sentence-case' : 'off',
-      'obsidianmd/validate-manifest' : 'off',
-      'obsidianmd/no-global-this': 'off',
-      'obsidianmd/no-nodejs-modules': 'off',
+      // 'obsidianmd/no-static-styles-assignment' : 'warn',
+      // 'obsidianmd/ui/sentence-case' : 'off',
+      // 'obsidianmd/validate-manifest' : 'off',
+      // 'obsidianmd/no-global-this': 'off',
+      // 'obsidianmd/no-nodejs-modules': 'off',
+      // 'obsidianmd/no-console': 'off'
     },
   },
 

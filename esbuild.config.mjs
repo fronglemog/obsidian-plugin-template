@@ -1,7 +1,7 @@
 /* ========================= IMPORTS ========================= */
-import esbuild from "esbuild";
-import process from "node:process";
-import { builtinModules } from "node:module";
+import esbuild from 'esbuild';
+import process from 'node:process';
+import { builtinModules } from 'node:module';
 
 /* SVELTE */
 import esbuildSvelte from 'esbuild-svelte';
@@ -17,44 +17,52 @@ if you want to view the source, please visit the github repository of this plugi
 const prod = process.argv[2] === 'production';
 
 const context = await esbuild.context({
-	banner: {
-		js: banner,
-	},
-	entryPoints: ['src/main.ts'],
-	bundle: true,
-  plugins : [
+  banner: {
+    js: banner,
+  },
+  entryPoints: ['src/main.ts'],
+  bundle: true,
+  plugins: [
     esbuildSvelte({
-      compilerOptions: { runes: true, css: 'injected' },
+      compilerOptions: { 
+        runes: true,
+        css: 'injected'
+      },
       preprocess: sveltePreprocess(),
     }),
   ],
-	external: [
-		"obsidian",
-		"electron",
-		"@codemirror/autocomplete",
-		"@codemirror/collab",
-		"@codemirror/commands",
-		"@codemirror/language",
-		"@codemirror/lint",
-		"@codemirror/search",
-		"@codemirror/state",
-		"@codemirror/view",
-		"@lezer/common",
-		"@lezer/highlight",
-		"@lezer/lr",
-		...builtinModules],
-	format: "cjs",
-	target: "es2022",
-	logLevel: "info",
-	sourcemap: prod ? false : "inline",
-	treeShaking: true,
-  outdir: "plugin",
-	minify: prod,
+  external: [
+    'obsidian',
+    'electron',
+    '@codemirror/autocomplete',
+    '@codemirror/collab',
+    '@codemirror/commands',
+    '@codemirror/language',
+    '@codemirror/lint',
+    '@codemirror/search',
+    '@codemirror/state',
+    '@codemirror/view',
+    '@lezer/common',
+    '@lezer/highlight',
+    '@lezer/lr',
+    'node:fs',
+    'node:fs/promises',
+    'node:os',
+    'node:path',
+    ...builtinModules
+  ],
+  format: 'cjs',
+  target: 'es2022',
+  logLevel: 'info',
+  sourcemap: prod ? false : 'inline',
+  treeShaking: true,
+  outdir: 'build',
+  minify: prod,
 });
 
 if (prod) {
-	await context.rebuild();
-	process.exit(0);
+  await context.rebuild();
+  process.exit(0);
 } else {
-	await context.watch();
+  await context.watch();
 }

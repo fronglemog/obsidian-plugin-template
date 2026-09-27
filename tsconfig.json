@@ -3,17 +3,18 @@
     "inlineSourceMap": true,
     "inlineSources": true,
     "module": "esnext",
-    "target": "es2022",
+    "target": "es2023",
     "allowJs": true,
     "checkJs": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
     "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
     "moduleResolution": "bundler",
     "importHelpers": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
-    "noUncheckedIndexedAccess": true,
     "strictBindCallApply": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
@@ -23,9 +24,9 @@
     "forceConsistentCasingInFileNames": true,
     "lib": [
       "DOM",
-      "ES2022"
+      "ES2023"
     ],
-    "outDir": "plugin",
+    "outDir": "build",
     "paths": {
       "src/*" : ["./src/*"]
     }
@@ -34,6 +35,8 @@
     "esbuild.config.mjs",
     "eslint.config.mjs",
     "vitest.config.ts",
+    "scripts/**/*.ts",
+    "scripts/**/*.mjs",
     "tests/**/*.ts",
     "src/**/*.ts",
     "src/**/*.svelte",
