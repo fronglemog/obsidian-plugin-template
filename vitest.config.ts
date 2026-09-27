@@ -14,7 +14,7 @@ export default defineConfig({
     ],
     exclude: [
       ...configDefaults.exclude,
-      '/plugin/**',
+      '/build/**',
     ]
   }
 });
