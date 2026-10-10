@@ -35,9 +35,9 @@ importers:
       '@eslint/js':
         specifier: 10.0.1
         version: 10.0.1(eslint@10.11.0)
-      '@obsidian-typings/obsidian-catalyst-1.14.4':
-        specifier: 1.2.0
-        version: 1.2.0(@types/node@24.13.3)
+      '@obsidian-typings/obsidian-public-1.14.4':
+        specifier: 1.3.0
+        version: 1.3.0(@types/node@24.13.3)
       '@types/node':
         specifier: 24.13.3
         version: 24.13.3
@@ -583,8 +583,8 @@ packages:
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
-  '@obsidian-typings/obsidian-catalyst-1.14.4@1.2.0':
-    resolution: {integrity: sha512-raZh1+/LHXETrTA/cWBA757j+4drmqYYfaJTxrDPxDoBArpGo9sZix8SjVUmjD8iOr2e9i+gTHBtOVYkmTspLQ==}
+  '@obsidian-typings/obsidian-public-1.14.4@1.3.0':
+    resolution: {integrity: sha512-pld2AngF8qkr1A+EaDzZc26e14wYKvuielDbhrBD/KY+esvi/j97Yy5CMgmZaROGPkzF/tcf5HPFye4ZveedXg==}
     peerDependencies:
       '@types/node': '>=16.0.0'
 
@@ -2886,7 +2886,7 @@ snapshots:
       '@tybys/wasm-util': 0.10.1
     optional: true
 
-  '@obsidian-typings/obsidian-catalyst-1.14.4@1.2.0(@types/node@24.13.3)':
+  '@obsidian-typings/obsidian-public-1.14.4@1.3.0(@types/node@24.13.3)':
     dependencies:
       '@types/node': 24.13.3
 
