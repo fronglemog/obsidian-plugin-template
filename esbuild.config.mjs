@@ -52,7 +52,7 @@ const context = await esbuild.context({
     ...builtinModules
   ],
   format: 'cjs',
-  target: 'es2022',
+  target: 'es2023',
   logLevel: 'info',
   sourcemap: prod ? false : 'inline',
   treeShaking: true,
